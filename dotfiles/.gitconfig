@@ -2,6 +2,6 @@
 	name = tianzhaotao
 	email = 13793971886@139.com
 [alias]
-	lg = log --color --all --decorate --graph --oneline
+	lg = log --color --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore_global
