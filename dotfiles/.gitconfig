@@ -1,0 +1,7 @@
+[user]
+	name = tianzhaotao
+	email = 13793971886@139.com
+[alias]
+	lg = log --color --all --decorate --graph --oneline
+[core]
+	excludesfile = ~/.gitignore_global
