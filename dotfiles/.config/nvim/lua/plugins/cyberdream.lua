@@ -19,6 +19,10 @@ return {
                 -- 推荐用 #00d7ff (明亮的青蓝色) 或者 #ff5f00 (明亮的橘红)
                 Function = { fg = "#00d7ff", bold = true },
 
+                -- Operator: 运算符 (如 =, +, ==)
+                -- 建议加粗 (bold = true)，因为运算符通常线条很细，在透明背景下容易虚掉
+                Operator = { fg = "#ffad5f", bold = true },
+
                 -- Example:
                 Comment = { fg = "#fb6d6d", bg = "NONE", italic = true },
 
