@@ -43,13 +43,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Add your plugins here
-  "EdenEast/nightfox.nvim",
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
   "nvim-lualine/lualine.nvim",
   "nvim-treesitter/nvim-treesitter",
-  require("plugins.multicursor")
+  require("plugins.multicursor"),
+  require("plugins.cyberdream"),
 })
 
 -- Theme
-vim.cmd.colorscheme("terafox")
+vim.cmd.colorscheme("cyberdream")
