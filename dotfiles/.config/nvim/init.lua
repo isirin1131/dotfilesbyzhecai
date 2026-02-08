@@ -1,21 +1,36 @@
--- line number
+-- Neovim config directory structure:
+--   init.lua                    <- this file (settings + lazy.nvim bootstrap)
+--   lua/plugins/*.lua           <- each file returns a plugin spec table
+--   lazy.nvim auto-imports all files in lua/plugins/
+
+-- Leader key: used as a prefix for custom keybindings (<leader>e, etc.)
+-- Must be set BEFORE loading lazy.nvim so plugins pick it up.
+vim.g.mapleader = " "
+
+-- Disable netrw (Vim's built-in file explorer) so nvim-tree can replace it
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Tab
+-- Tab / indentation
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 0
+vim.opt.shiftwidth = 0       -- 0 means "follow tabstop"
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
--- file
+-- File handling
 vim.opt.autoread = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+local undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.fn.mkdir(undodir, "p")
+vim.opt.undodir = undodir
 
--- search
+-- Search
 vim.opt.incsearch = true
 
 -- UI
@@ -29,7 +44,7 @@ vim.opt.colorcolumn = "80"
 
 -- Plugin management with lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -42,14 +57,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- Add your plugins here
-  "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lualine/lualine.nvim",
-  "nvim-treesitter/nvim-treesitter",
-  require("plugins.multicursor"),
-  require("plugins.cyberdream"),
+  spec = {
+    { import = "plugins" },  -- auto-imports every lua/plugins/*.lua file
+  },
 })
-
--- Theme
-vim.cmd.colorscheme("cyberdream")
