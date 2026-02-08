@@ -17,16 +17,19 @@ return {
     end,
   },
   {
-    "morhetz/gruvbox",
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.gruvbox_transparent_bg = 1
+      require("gruvbox").setup({
+        transparent_mode = true,
+        overrides = {
+          CursorLine = { bg = "#7e6e60" },
+          ColorColumn = { bg = "#c0a894" },
+        },
+      })
       vim.cmd("colorscheme gruvbox")
-      vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "CursorLine", { bg = "#7e6e60" })
-      vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#c0a894" })
     end,
   },
 }
