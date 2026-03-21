@@ -6,6 +6,7 @@ return {
       buffers = {
         actions = {
           ["alt-x"] = { fn = actions.buf_del, reload = true },
+          ["ctrl-x"] = false,
         },
       },
     })
