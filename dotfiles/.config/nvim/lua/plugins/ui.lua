@@ -26,10 +26,10 @@ return {
         overrides = {
           CursorLine = { bg = "#7e6e60" },
           ColorColumn = { bg = "#c0a894" },
+          NormalFloat = { bg = "NONE" },
         },
       })
       vim.cmd("colorscheme gruvbox")
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     end,
   },
 }

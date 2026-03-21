@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # 处理 dotfiles 目录中的隐藏文件（除了 . 和 ..）
-files=$(ls -a $1 | grep -E '^.[^.]+')
-for file in `echo $files`; do
-    if [ -f "$1/$file" ]; then
-        echo "Creating symlink for $file"
-        ln -sf "$(realpath "$1/$file")" ~/"$file"
+for file in "$1"/.[!.]*; do
+    if [ -f "$file" ]; then
+      name=$(basename "$file")
+        echo "Creating symlink for $name"
+        ln -sf "$(realpath "$file")" ~/"$name"
     fi
 done
 

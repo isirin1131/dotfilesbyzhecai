@@ -10,7 +10,7 @@ return {
         "python", "go", "c", "cpp",
         "javascript", "typescript", "html", "css",
         "rust", "java", "bash",
-        "typst",
+        "typst", "svelte"
       },
       sync_install = false,
       auto_install = false,
