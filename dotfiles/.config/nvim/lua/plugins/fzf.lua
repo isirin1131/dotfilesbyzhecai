@@ -1,7 +1,14 @@
 return {
   "ibhagwan/fzf-lua",
   config = function()
-    require("fzf-lua").setup()
+    local actions = require("fzf-lua.actions")
+    require("fzf-lua").setup({
+      buffers = {
+        actions = {
+          ["alt-x"] = { fn = actions.buf_del, reload = true },
+        },
+      },
+    })
     vim.keymap.set("n", "<leader>ff", ":FzfLua files<CR>")
     vim.keymap.set("n", "<leader>fg", ":FzfLua live_grep<CR>")
     vim.keymap.set("n", "<leader>fb", ":FzfLua buffers<CR>")
