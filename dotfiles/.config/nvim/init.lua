@@ -11,6 +11,9 @@ vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Override Ctrl-o to use leader-z
+vim.keymap.set("n", "<leader>z", "<C-o>")
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
