@@ -12,8 +12,8 @@ return {
         "rust", "java", "bash",
         "typst", "svelte"
       },
-      sync_install = false,
-      auto_install = false,
+      sync_install = true,
+      auto_install = true,
       highlight = { enable = true },
     })
   end,
