@@ -26,8 +26,9 @@ return {
       require("gruvbox").setup({
         transparent_mode = true,
         overrides = {
-          CursorLine = { bg = "#7e6e60" },
-          ColorColumn = { bg = "#c0a894" },
+          CursorLine = { bg = "#3c3836" },
+          Cursor = { bg = "#ffffff", fg = "#1d2021" },
+          ColorColumn = { bg = "#3c3836" },
           NormalFloat = { bg = "NONE" },
         },
       })
