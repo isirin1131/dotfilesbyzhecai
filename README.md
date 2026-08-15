@@ -52,7 +52,7 @@ Leader 键为空格，以下为全部自定义键位：
 - `<leader>ff` — 找文件
 - `<leader>fg` — 全局搜索（live grep）
 - `<leader>fb` — buffer 列表（`alt-x` 关闭选中 buffer）
-- `<leader>fs` — 当前文件 LSP 符号
+- `<leader>ls` — 当前文件 LSP 符号
 - `<leader>gf` — git status 文件列表
 
 **Git（gitsigns）**
