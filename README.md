@@ -34,6 +34,7 @@ dotfiles/
 | `fzf.lua` | fzf-lua 模糊搜索 |
 | `git.lua` | gitsigns（行内 blame、diff） |
 | `lsp.lua` | nvim-lspconfig（pyright / ts_ls / jdtls） |
+| `trouble.lua` | Trouble（诊断列表） |
 | `completion.lua` | blink.cmp 自动补全 |
 | `treesitter.lua` | nvim-treesitter 语法高亮 |
 
@@ -65,6 +66,8 @@ Leader 键为空格，以下为全部自定义键位：
 - `gr` — 查找引用
 - `K` — 悬浮文档
 - `<leader>rn` — 重命名符号
+- `<leader>xx` — 当前 buffer 的诊断列表（Trouble）
+- `<leader>XX` — 全部诊断列表（Trouble）
 
 **补全（blink.cmp 默认键位）**
 
