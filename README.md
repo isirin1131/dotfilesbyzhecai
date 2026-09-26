@@ -27,16 +27,19 @@ dotfiles/
 - **插件管理器：** lazy.nvim（在 `init.lua` 中引导启动）
 - **Leader 键：** 空格
 - **插件定义：** `lua/plugins/` 下每个文件返回一个 lazy.nvim spec，自动导入
+- **外部依赖（brew）：** `tree-sitter-cli`（编译 parser）、`tinymist`（Typst LSP 与预览），以及 `pyright`、`typescript-language-server`、`jdtls`
+- **已关闭：** Python 3 provider（未使用 Python 插件，省去打开 `.py` 时的探测耗时）
 
 | 文件 | 内容 |
 | --- | --- |
 | `ui.lua` | nvim-tree、lualine、gruvbox（透明模式） |
 | `fzf.lua` | fzf-lua 模糊搜索 |
 | `git.lua` | gitsigns（行内 blame、diff） |
-| `lsp.lua` | nvim-lspconfig（pyright / ts_ls / jdtls） |
+| `lsp.lua` | nvim-lspconfig（pyright / ts_ls / jdtls / tinymist），Typst 浏览器预览 |
 | `trouble.lua` | Trouble（诊断列表） |
 | `completion.lua` | blink.cmp 自动补全 |
-| `treesitter.lua` | nvim-treesitter 语法高亮 |
+| `treesitter.lua` | nvim-treesitter（main 分支）：安装 parser，FileType 时启用高亮 |
+| `render-markdown.lua` | render-markdown.nvim（Markdown 在 buffer 内渲染） |
 
 ### 常用快捷键
 
@@ -68,6 +71,11 @@ Leader 键为空格，以下为全部自定义键位：
 - `<leader>rn` — 重命名符号
 - `<leader>xx` — 当前 buffer 的诊断列表（Trouble）
 - `<leader>XX` — 全部诊断列表（Trouble）
+
+**预览**
+
+- `<leader>mp` — 切换 Markdown 渲染（Markdown buffer）
+- `<leader>tp` — 开启 / 关闭 Typst 浏览器预览（tinymist attach 后）
 
 **补全（blink.cmp 默认键位）**
 
