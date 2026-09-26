@@ -11,6 +11,9 @@ vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Disable the Python 3 provider (no Python-based plugins in use); saves ~35ms when opening .py files
+vim.g.loaded_python3_provider = 0
+
 -- Override Ctrl-o to use leader-z
 vim.keymap.set("n", "<leader>z", "<C-o>")
 
